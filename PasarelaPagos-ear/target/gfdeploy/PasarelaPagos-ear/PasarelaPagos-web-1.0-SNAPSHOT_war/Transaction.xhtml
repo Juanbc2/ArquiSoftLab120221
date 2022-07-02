@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <style type="text/css">
+        .old{
+          background-color: #6CE26C !important;
+          background-image: none !important;
+          color: #000000 !important;
+        }        
+    </style>
+    
+    <style type="text/css">
+    .ui-datatable .ui-datatable-header {
+        text-align: right !important;
+    }
+     
+    .ui-selectcheckboxmenu-panel .ui-selectcheckboxmenu-header .ui-chkbox {
+        display: none;
+    }
+</style>
+    <h:head>
+        
+         <script name="jquery/jquery.js" library="primefaces"></script>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+                <h1>Pasarela de pago</h1>
+        <form>
+        <h4>Nombre:</h4>
+        <input type="text" name="nombre" value="" />
+        <h4>Email:</h4>
+        <input type="email" name="email" value="" />
+        <h4>Tarjeta de crédito:</h4>
+        <select name="tipoTarjeta">
+            <option>Visa</option>
+            <option>Mastercard</option>
+            <option>Diners</option>
+            <option>American Express</option>
+        </select>
+        <h4>CVV:</h4>
+        <input type="number" name="cvv" value="" maxlength="3"/>
+        <h4>Valor de la transacción:</h4>
+        <input type="number" name="valorTransaccion" min="1" step="any" />
+        <h4>Fecha de vencimiento:</h4>
+        <input type="date" name="fechaVencimiento" value="" />
+        <br/>
+        <input type="submit" value="Generar" />
+        </form>
+                <f:view>
+
+
+                    <h:form>
+                        <h1><h:outputText value="List"/></h1>
+                        <h:dataTable value="#{pasarelaPagosMBean1.client}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="IdClient"/>
+                                </f:facet>
+                                <h:outputText value="#{item.idClient}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NameClient"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nameClient}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Email"/>
+                                </f:facet>
+                                <h:outputText value="#{item.email}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </f:view>
+
+
+    </h:body>
+</html>
+

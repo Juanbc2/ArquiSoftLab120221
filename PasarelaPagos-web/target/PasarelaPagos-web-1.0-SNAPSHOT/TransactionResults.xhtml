@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Resultados</title>
+    </h:head>
+    <h:body> 
+        <div> 
+            <f:view>
+
+
+                <h:form>
+                    <h1><h:outputText value="List"/></h1>
+                    <h:dataTable value="#{pasarelaPagosMBean1.transactions}" var="item">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Amount"/>
+                            </f:facet>
+                            <h:outputText value="#{item.amount}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Timestamp"/>
+                            </f:facet>
+                            <h:outputText value="#{item.timestamp}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="IdCard"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idCard}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="IdTransaction"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idTransaction}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </f:view>
+
+        </div>
+        <h:outputText value="QR"/>
+        <p:barcode value="https://cdn.discordapp.com/attachments/761417982785224789/992523482871115866/unknown.png" type="qr" width="125" height="125"/>
+                <h:form> 
+   <h3> Using Managed Bean</h3>  
+   <h:commandButton action = "Transaction" 
+   value = "BACK" />
+</h:form>
+    </h:body>
+</html>
+

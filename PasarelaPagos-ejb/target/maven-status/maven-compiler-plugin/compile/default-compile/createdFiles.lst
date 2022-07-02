@@ -1,0 +1,12 @@
+com\udea\entity\Client.class
+com\udea\session\ClientManager.class
+com\udea\session\ClientManagerLocal.class
+com\udea\entity\Transactions.class
+com\udea\session\TransactionsManager.class
+com\udea\session\CreditcardManagerLocal.class
+com\udea\entity\Client_.class
+com\udea\entity\Creditcard_.class
+com\udea\entity\Transactions_.class
+com\udea\session\CreditcardManager.class
+com\udea\session\TransactionsManagerLocal.class
+com\udea\entity\Creditcard.class
